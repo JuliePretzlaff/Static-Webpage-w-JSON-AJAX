@@ -15,12 +15,21 @@ btn.addEventListener("click", function () {
     }
     //onload method.  what happens when data is loaded
     ourRequest.onload = function () {
-        //test
-        //console.log(ourRequest.responseText)
-        var ourData = JSON.parse(ourRequest.responseText);
-        console.log(ourData[0])
-        renderHTML(ourData);
+        if (ourRequest.status >= 200 && ourRequest.status < 400) {
+            var ourData = JSON.parse(ourRequest.responseText);
+            console.log(ourData[0])
+            renderHTML(ourData);
+        }
+        else {
+            console.log("We were able to connect to the server, but it returned an error.");
+        }
+
     };
+    //error handling
+    ourRequest.onerror = function () {
+        console.log("connection error.");
+    };
+
     ourRequest.send();
 });
 
