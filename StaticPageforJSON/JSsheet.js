@@ -109,8 +109,18 @@ function renderHTML(data) {
 
 //});
 
+
+
+//jquery practice:
+//$(document).ready(function () {
+//    $("#btn2").click(function () {
+//        $("#disappear").fadeOut();
+//    });
+//});
+
+//above does same thing as below:
 $(document).ready(function () {
     $("#btn2").click(function () {
-        $(this).hide();
+        $(this).parents("#disappear").fadeOut();
     });
 });

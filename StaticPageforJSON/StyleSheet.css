@@ -3,3 +3,26 @@
 .hide-me{
     display:none;
 }
+
+#disappear{
+    margin-top: 10vh;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+#close
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: navy;
+}
+#close:hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: cornflowerblue;
+}
+
+
+
