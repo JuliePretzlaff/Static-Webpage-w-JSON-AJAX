@@ -124,3 +124,11 @@ $(document).ready(function () {
         $(this).parents("#disappear").fadeOut();
     });
 });
+
+//faq functions
+
+$(".a").hide();
+
+    $(".faq h5").click(function () {
+        $(this).next(".a").slideToggle();
+    });
