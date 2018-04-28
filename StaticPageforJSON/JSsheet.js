@@ -13,13 +13,15 @@ btn.addEventListener("click", function () {
     if (btnCounter > 3) {
         btn.classList.add("hide-me");
     }
+
     //onload method.  what happens when data is loaded
     ourRequest.onload = function () {
         if (ourRequest.status >= 200 && ourRequest.status < 400) {
             var ourData = JSON.parse(ourRequest.responseText);
-            console.log(ourData[0])
+            //console.log(ourData[0])
             renderHTML(ourData);
         }
+        //error handling:
         else {
             console.log("We were able to connect to the server, but it returned an error.");
         }
@@ -34,7 +36,7 @@ btn.addEventListener("click", function () {
 });
 
 
-//function to which we'll pass our data
+//function to which we'll pass our data to generate innertext of animal div
 function renderHTML(data) {
     var htmlString = "";
     //for loop to concatinate each object info into a sentence
@@ -92,3 +94,23 @@ function renderHTML(data) {
 //        "favorite activity": "fetch"
 //    }
 //]
+
+
+
+//Jquery practice:
+
+//$(document).ready(function() {
+
+//    $("#btn2").click(function() {
+
+//        alert("hello");
+//    });
+
+
+//});
+
+$(document).ready(function () {
+    $("#btn2").click(function () {
+        $(this).hide();
+    });
+});
