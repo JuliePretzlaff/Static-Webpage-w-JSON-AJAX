@@ -132,3 +132,11 @@ $(".a").hide();
     $(".faq h5").click(function () {
         $(this).next(".a").slideToggle();
     });
+
+
+//load about content:
+$("#about").click(function () {
+
+    $("#about-area").load("about.html");
+    return false;
+});
